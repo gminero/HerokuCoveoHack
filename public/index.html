@@ -20,6 +20,7 @@
             background-position: 0 0; /* You need to reset this because the animation uses a sprite to display the default logo. */
             background-size: auto;  /* There are several options for background-size depending on the file you use (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-size). */
             z-index: 9999;
+            min-height: 100%;
         }
     </style>
     <script>
@@ -31,55 +32,7 @@
         // Initialize the UI by targeting a root element.
         Coveo.init(document.body);
         })
-        /*
-        $(function() {
-            $("#phoneChangerForm").submit(function(event) {
-                event.preventDefault();
-
-                var errorMessage = $("#errorMessage");
-                var error = $("#error");
-                error.hide();
-
-                $("#message").hide();
-
-                var firstName = $("#firstName").val();
-                var lastName = $("#lastName").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val();
-
-                if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0) {
-                    errorMessage.text("All of the fields are required.");
-                    error.show();
-                }
-                else {
-                    $.ajax({
-                        url: event.target.action,
-                        method: event.target.method,
-                        data: JSON.stringify({
-                            firstName: firstName,
-                            lastName: lastName,
-                            email: email,
-                            phone: phone
-                        }),
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function(data) {
-                            $("#firstName").val("");
-                            $("#lastName").val("");
-                            $("#email").val("");
-                            $("#phone").val("");
-                            $("#messageMessage").text("Record updated!");
-                            $("#message").show();
-                        },
-                        error: function(err) {
-                            errorMessage.text(err.responseJSON.error);
-                            error.show();
-                        }
-                    })
-                }
-            });
-        });*/
-
+       
     </script>
 </head>
 <body id="search" class='CoveoSearchInterface' data-enable-history="true" data-design="new">
@@ -130,6 +83,40 @@
         <div class="CoveoLogo"></div>
         <div class="CoveoResultsPerPage"></div>
     </div>
+</div>
+<div>
+    <script id="SalesforceContact" class="result-template" type="text/html" data-field-objecttype="Contact"><div class="coveo-result-frame" style="padding:0 16px 16px 0;">
+       WoopyDoo
+        <div class="coveo-result-cell">
+            <span class="CoveoIcon" data-small="true"></span>
+        </div>
+        <div class="coveo-result-cell" style="vertical-align: top;padding-left:16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+                <div class="coveo-result-cell coveo-no-wrap" style="vertical-align: top; font-size: 16px;">
+                    <a class="CoveoSalesforceResultLink"></a>
+                </div>
+                <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                    <div class="coveo-result-row">
+                        <span class="CoveoFieldValue" data-field="@sflastmodifieddate" data-helper="date"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:12px;">
+                <div class="coveo-result-cell">
+                    <span class="CoveoFieldValue" data-field="@sfdescription"></span>
+                </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:8px;">
+                <div class="coveo-result-cell" style="line-height:1.5em;">
+                    <span class="CoveoFieldValue" data-field="@sfaccountname" data-text-caption="Account name" style="margin-right:30px;"></span>
+                    <span class="CoveoFieldValue" data-field="@sfphone" data-text-caption="Phone" style="margin-right:30px;"></span>
+                    <span class="CoveoFieldValue" data-field="@sfemail" data-text-caption="Email" style="margin-right:30px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
 </div>
 </body>
 </html>
