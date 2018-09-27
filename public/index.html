@@ -17,14 +17,10 @@
         .coveo-logo {
             background-image: url("/img/salesforce.png");
             object-fit: contain;
-            background-position: 0 0; /* You need to reset this because the animation uses a sprite to display the default logo. */
-            background-size: auto;  /* There are several options for background-size depending on the file you use (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-size). */
             z-index: 9999;
             min-height: 100%;
             min-width: 100%;
             margin-left:50%;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
         }
     </style>
     <script>
@@ -89,32 +85,5 @@
     </div>
 </div>
 <div>
-    <script id="SalesforceContact" class="result-template" type="text/html" data-field-objecttype="Contact"><div class="coveo-result-frame" style="padding:0 16px 16px 0;">
-       WoopyDoo
-        <div class="coveo-result-cell">
-            <span class="CoveoIcon" data-small="true"></span>
-        </div>
-        <div class="coveo-result-cell" style="vertical-align: top;padding-left:16px;">
-            <div class="coveo-result-row" style="margin-top:0;">
-                <div class="coveo-result-cell coveo-no-wrap" style="vertical-align: top; font-size: 16px;">
-                    <a class="CoveoSalesforceResultLink"></a>
-                </div>
-                <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
-                    <div class="coveo-result-row">
-                        <span class="CoveoFieldValue" data-field="@sflastmodifieddate" data-helper="date"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="coveo-result-row" style="margin-top:12px;">
-                <div class="coveo-result-cell">
-                    <span class="CoveoFieldValue" data-field="@sfdescription"></span>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    </script>
-
-</div>
 </body>
 </html>
